@@ -1,14 +1,15 @@
 {
-  "id": "com.yourname.feetracker",
+  "id": "com.lalpukip.feetracker",
   "name": "Fee Countdown Tracker",
-  "short_name": "Tracker",
+  "short_name": "FeeTrack",
   "description": "Offline countdown for library and fee tracking.",
-  "start_url": "./index.html",
+  "start_url": "/countdown-tracker/index.html",
+  "scope": "/countdown-tracker/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#121212",
   "theme_color": "#007bff",
- "icons": [
+  "icons": [
     {
       "src": "logo.png",
       "sizes": "728x728",
