@@ -1,8 +1,8 @@
 {
-  "id": "com.lalpukip.feetracker",
-  "name": "Fee Countdown Tracker",
-  "short_name": "FeeTrack",
-  "description": "Offline countdown for library and fee tracking.",
+  "id": "com.lalpukip.feetracker.unique.v2",
+  "name": "Lalpukip Fee Tracker",
+  "short_name": "L-Fee",
+  "description": "Unique countdown for library fees and tasks.",
   "start_url": "/countdown-tracker/index.html",
   "scope": "/countdown-tracker/",
   "display": "standalone",
