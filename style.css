@@ -1,97 +1,100 @@
+/* Import Modern Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 :root {
+    --primary-color: #007bff;
     --bg-color: #121212;
     --card-bg: #1e1e1e;
-    --primary-blue: #007bff;
-    --text-main: #ffffff;
-    --text-dim: #b3b3b3;
-    --accent-green: #00ff88;
+    --text-color: #ffffff;
+    --text-secondary: #b3b3b3;
 }
 
-body { 
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
-    background-color: var(--bg-color); 
-    color: var(--text-main); 
-    display: flex;
-    justify-content: center;
-    padding: 20px;
+* {
+    box-sizing: border-box;
     margin: 0;
+    padding: 0;
 }
 
-.container { 
-    width: 100%;
-    max-width: 400px; 
-}
-
-/* Logo Styling */
-.logo {
-    display: block;
-    margin: 0 auto 20px auto;
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-}
-
-h2 { text-align: center; margin-bottom: 25px; font-weight: 300; }
-
-.input-section { 
-    display: flex; 
-    flex-direction: column; 
-    gap: 12px; 
-    margin-bottom: 30px; 
-    background: var(--card-bg);
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
+}
+
+/* Make the Logo a Circle */
+.logo-container img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* This forces the square image into a circle */
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+/* Splash Screen / Loader */
+#loader {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    border-top: 4px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Typography Styling */
+h1 {
+    font-weight: 600;
+    font-size: 1.8rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.card {
+    background: var(--card-bg);
     border-radius: 15px;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-input { 
-    padding: 15px; 
-    border-radius: 10px; 
-    border: 1px solid #333; 
-    background: #252525; 
+button {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    background: var(--primary-color);
     color: white;
-    font-size: 1rem;
-}
-
-button { 
-    padding: 15px; 
-    border-radius: 10px; 
-    border: none; 
-    background: var(--primary-blue); 
-    color: white; 
-    font-weight: bold; 
-    font-size: 1rem;
-    cursor: pointer; 
-}
-
-.card { 
-    background: var(--card-bg); 
-    padding: 20px; 
-    border-radius: 15px; 
-    margin-bottom: 15px; 
-    border-left: 4px solid var(--primary-blue); 
-    position: relative; 
-    animation: fadeIn 0.3s ease;
-}
-
-.timer { 
-    font-family: 'Courier New', Courier, monospace; 
-    font-size: 1.4rem; 
-    color: var(--accent-green); 
-    margin-top: 10px;
-}
-
-.delete-btn { 
-    position: absolute; 
-    right: 15px; 
-    top: 15px; 
-    background: none; 
-    color: #ff4444; 
-    font-size: 1.5rem;
     border: none;
-    cursor: pointer; 
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+button:active {
+    transform: scale(0.95);
 }
